@@ -8,9 +8,10 @@ namespace ASPNetExercises.Models
 {
     public class MenuItem
     {
+
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public string Id { get; set; }
         [Required]
         public int CategoryId { get; set; }
         [Required]

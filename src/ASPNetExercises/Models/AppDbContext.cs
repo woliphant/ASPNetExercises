@@ -11,8 +11,8 @@ namespace ASPNetExercises.Models
             base.OnModelCreating(builder);
             builder.Entity<Category>().ForSqlServerToTable("Categories")
                 .Property(c => c.Id).UseSqlServerIdentityColumn();
-            builder.Entity<MenuItem>().ForSqlServerToTable("Menuitems")
-                .Property(m => m.Id).UseSqlServerIdentityColumn();
+
+            builder.Entity<MenuItem>().ForSqlServerToTable("Menuitems");
             builder.Entity<Tray>().ForSqlServerToTable("Trays")
                 .Property(t => t.Id).UseSqlServerIdentityColumn();
             builder.Entity<TrayItem>().ForSqlServerToTable("TrayItems")
