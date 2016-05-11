@@ -18,5 +18,6 @@ namespace ASPNetExercises.ViewModels
                 Value = category.Name
             });
         }
+        public IEnumerable<MenuItem> MenuItems { get; set; }
     }
 }

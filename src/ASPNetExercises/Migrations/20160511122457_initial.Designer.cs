@@ -8,7 +8,7 @@ using ASPNetExercises.Models;
 namespace ASPNetExercises.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20160509162837_initial")]
+    [Migration("20160511122457_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

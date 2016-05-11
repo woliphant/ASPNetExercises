@@ -14,5 +14,11 @@ namespace ASPNetExercises.Models
         {
             return _db.Categories.ToList<Category>();
         }
+        // Retrieves the name as well as the ID for catagoryModel
+        public string GetName(int id)
+        {
+            Category cat = _db.Categories.First(c => c.Id == id);
+            return cat.Name;
+        }
     }
 }

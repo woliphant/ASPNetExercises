@@ -34,7 +34,16 @@ namespace ASPNetExercises
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddCaching();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(200);
+                options.CookieName = ".MyApplication";
+            });
+
             services.AddMvc();
+
         }
         // This method gets called by the runtime. Method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
@@ -43,6 +52,7 @@ namespace ASPNetExercises
             app.UseDeveloperExceptionPage();
             app.UseIdentity();
             app.UseStaticFiles();   // Adds static files capability to the Statup.cs file so jQuery and bootstrap can be recognized
+            app.UseSession();   // Tells application to use the session management features
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
