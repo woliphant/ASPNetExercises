@@ -4,6 +4,8 @@ using ASPNetExercises.ViewModels;
 using Microsoft.AspNet.Http;
 using System.Collections.Generic;
 using System;
+using ASPNetExercises.Utils;
+
 namespace ASPNetExercises.Controllers
 {
     public class CategoryController : Controller
@@ -24,7 +26,7 @@ namespace ASPNetExercises.Controllers
                     CategoryModel catModel = new CategoryModel(_db);
                     // now load the categories
                     List<Category> categories = catModel.GetAll();
-                    HttpContext.Session.SetObject("categories", categories);
+                    HttpContext.Session.SetObject(SessionVars.Categories, categories);
                     vm.SetCategories(HttpContext.Session.GetObject<List<Category>>("categories"));
                 }
                 catch (Exception ex)
@@ -64,7 +66,7 @@ namespace ASPNetExercises.Controllers
                     vms.Add(mvm);
                 }
                 MenuItemViewModel[] myMenu = vms.ToArray();
-                HttpContext.Session.SetObject("menu", myMenu);
+                HttpContext.Session.SetObject(SessionVars.Menu, myMenu);
             }
             vm.SetCategories(HttpContext.Session.GetObject<List<Category>>("categories"));
             return View("Index", vm);
@@ -104,7 +106,7 @@ namespace ASPNetExercises.Controllers
                 }
             }
             ViewBag.AddMessage = retMsg;
-            HttpContext.Session.SetObject("tray", tray);
+            HttpContext.Session.SetObject(SessionVars.Tray, tray);
             vm.SetCategories(HttpContext.Session.GetObject<List<Category>>("categories"));
             return View("Index", vm);
         }

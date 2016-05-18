@@ -11,6 +11,12 @@
         $("#results").text("");
         CopyToModal(Id);
     });
+    if ($("#register_popup") != undefined) {
+        $('#register_popup').modal('show');
+    }
+    if ($("#login_popup") != undefined) {
+        $('#login_popup').modal('show');
+    }
 });
 function CopyToModal(id) {
     $("#qty").val("0");

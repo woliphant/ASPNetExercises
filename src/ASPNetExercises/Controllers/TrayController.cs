@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Http;
+using ASPNetExercises.Utils;
 
 namespace ASPNetExercises.Controllers
 {
@@ -13,7 +14,7 @@ namespace ASPNetExercises.Controllers
         public ActionResult ClearTray()
         {
             HttpContext.Session.Remove("tray"); // clear out current tray
-            HttpContext.Session.SetString("Message", "Tray Cleared"); // clear out current cart once order has been placed
+            HttpContext.Session.SetString(SessionVars.Message, "Tray Cleared"); // clear out current cart once order has been placed
             return Redirect("/Home");
         }
     }
