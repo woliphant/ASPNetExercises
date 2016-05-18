@@ -1,4 +1,4 @@
-﻿{
+{
  "version": "1.0.0-*",
  "compilationOptions": {
 	"emitEntryPoint": true
@@ -23,7 +23,10 @@
 		 "web": "Microsoft.AspNet.Server.Kestrel"
 	 },
  "frameworks": {
- "dnx451": { },
+  "dnx451": {
+    "dependencies": {
+    }
+  },
  "dnxcore50": { }
  },
  "exclude": [

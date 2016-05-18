@@ -32,6 +32,10 @@ namespace ASPNetExercises.Controllers
                     ViewBag.Message = "Catalogue Problem - " + ex.Message;
                 }
             }
+            else
+            {
+                vm.SetCategories(HttpContext.Session.GetObject<List<Category>>("categories"));
+            }
             return View(vm);
         }
         public IActionResult SelectCategory(MenuViewModel vm)
@@ -77,8 +81,7 @@ namespace ASPNetExercises.Controllers
             {
                 tray = HttpContext.Session.GetObject<Dictionary<int, object>>("tray");
             }
-            MenuItemViewModel[] menu =
-           HttpContext.Session.GetObject<MenuItemViewModel[]>("menu");
+            MenuItemViewModel[] menu = HttpContext.Session.GetObject<MenuItemViewModel[]>("menu");
             String retMsg = "";
             foreach (MenuItemViewModel item in menu)
             {

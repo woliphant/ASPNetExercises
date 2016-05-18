@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+
 namespace ASPNetExercises.ViewModels
 {
     public class MenuViewModel
@@ -24,7 +25,7 @@ namespace ASPNetExercises.ViewModels
         }
         public void SetCategories(List<Category> cats)
         {
-            _categories = cats;
+             _categories = cats;
         }
     }
 }
